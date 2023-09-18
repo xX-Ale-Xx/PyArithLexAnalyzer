@@ -14,7 +14,18 @@ class Trigonometria(Expression):
             value = self.dato.operar(arbol)
 
         if self.tipo.operar(arbol).capitalize() == 'Coseno':
-            return math.cos(value)
+
+            return round(value,2)
+        elif self.tipo.operar(arbol).capitalize() == 'Seno':
+
+            return round(math.sin(value),2)
+        elif self.tipo.operar(arbol).capitalize() == 'Tangente':
+
+            return round(math.tan(value),2)
+        elif self.tipo.operar(arbol).capitalize() == 'Raiz':
+            return round(math.sqrt(value),2)
+        elif self.tipo.operar(arbol).capitalize() == 'Inverso':
+            return round((1/value),2)
         else:
             return None
 

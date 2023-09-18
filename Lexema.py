@@ -11,7 +11,7 @@ class Lexema(Expression):
         return self.lexema
 
     def isTrigonometria(self):
-        return self.lexema.capitalize() == 'Coseno' or self.lexema.capitalize() == 'Seno' or self.lexema.capitalize() == 'Tangente'
+        return self.lexema.capitalize() == 'Coseno' or self.lexema.capitalize() == 'Seno' or self.lexema.capitalize() == 'Tangente' or self.lexema.capitalize() == 'Inverso' or self.lexema.capitalize() == 'Raiz'
 
     def getFila(self):              #! Retorna la fila
         return super().getFila()

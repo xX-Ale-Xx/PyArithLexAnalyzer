@@ -1,10 +1,8 @@
-import os
 from tkinter import messagebox
 
 
 class generarJSON:
     def generar_archivo(self, direccion, lista_errores):
-        nombre_archivo = "informe_"
 
         if lista_errores:
             contenido = '{\n'
@@ -34,6 +32,10 @@ class generarJSON:
         contenido += '\t\t\t\"No\":' + str(n) +',\n'
         contenido += '\t\t\t\"descripcion\":{\n'
         contenido += '\t\t\t\t\"lexema\":\"' + error.err() + "\",\n"
+        contenido += '\t\t\t\t\"tipo\":\"' + 'error lexico' + "\",\n"
+        print(error.getColumna())
+        contenido += '\t\t\t\t\"columna\":\"' + str(error.getColumna()) + "\",\n"
+        contenido += '\t\t\t\t\"fila\":\"' + str(error.getFila()) + "\"\n"
         contenido += '\t\t\t}\n'
 
         contenido += '\t\t}'

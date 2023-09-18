@@ -3,10 +3,16 @@ from Errores import *
 from Lexema import *
 from Numero import *
 from Trigonometria import *
+from Texto import *
 
 reserved = {
     'ROPERACIONES'      : 'Operaciones',
     'ROPERACION'        : 'Operacion',
+    'RCONFIGURACION'    : 'Configuraciones',
+    'RTEXTO'            : 'texto',
+    'RCOLORFONDONODO'   : 'color-fondo-nodo',
+    'RCOLORFUENTENODO'  : 'color-fuente-nodo',
+    'RFORMANODO'        : 'forma-nodo',
     'RVALOR1'           : 'Valor1',
     'RVALOR2'           : 'Valor2',
     'RSUMA'             : 'Suma',
@@ -163,6 +169,26 @@ def operar():
             n2 = lista_lexemas.pop(0)
             if n2.operar(None) == '[':
                 n2 = operar()
+
+        if lexema.operar(None) == 'texto':
+            tipo = 'texto'
+            text = lista_lexemas.pop(0)
+            return Texto(text, tipo, f'Inicio: {text.getFila()}', f'Fin: {text.getColumna()}')
+
+        if lexema.operar(None) == 'color-fondo-nodo':
+            tipo = 'color-fondo-nodo'
+            text = lista_lexemas.pop(0)
+            return Texto(text, tipo, f'Inicio: {text.getFila()}', f'Fin: {text.getColumna()}')
+
+        if lexema.operar(None) == 'color-fuente-nodo':
+            tipo = 'color-fuente-nodo'
+            text = lista_lexemas.pop(0)
+            return Texto(text, tipo, f'Inicio: {text.getFila()}', f'Fin: {text.getColumna()}')
+
+        if lexema.operar(None) == 'forma-nodo':
+            tipo = 'forma-nodo'
+            text = lista_lexemas.pop(0)
+            return Texto(text, tipo, f'Inicio: {text.getFila()}', f'Fin: {text.getColumna()}')
 
         if operacion and n1 and n2:
             return Aritmetica(n1, n2, operacion, f'Inicio: {operacion.getFila()}: {operacion.getColumna()}', f'Fin: {n2.getFila()}: {n2.getColumna()}')
