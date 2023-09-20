@@ -251,7 +251,7 @@ def Graphviz(respuestas_Operaciones):
 
                 text += f"\tnodoRespuesta{Crespuesta} -> nodoIzqu{CnumIzquierdo}\n"
                 if CnumDerecho:
-                  text += f"\tnodoRespuesta{Crespuesta} -> nodoDere{CnumDerecho}\n"
+                  text += f"\tnodoRespuesta{Crespuesta} -> nodoDere{CnumDerecho}\n" 
 
                 text += f"\tnodoT{Ctotal}" + f"[label = \"{respuesta.operar(None)}" + "\"]\n"
                 text += f"\tnodoT{Ctotal} -> nodoRespuesta{Crespuesta}\n"
