@@ -10,9 +10,9 @@ reserved = {
     'ROPERACION'        : 'Operacion',
     'RCONFIGURACION'    : 'Configuraciones',
     'RTEXTO'            : 'texto',
-    'RCOLORFONDONODO'   : 'color-fondo-nodo',
-    'RCOLORFUENTENODO'  : 'color-fuente-nodo',
-    'RFORMANODO'        : 'forma-nodo',
+    'RCOLORFONDONODO'   : 'fondo',
+    'RCOLORFUENTENODO'  : 'fuente',
+    'RFORMANODO'        : 'forma',
     'RVALOR1'           : 'Valor1',
     'RVALOR2'           : 'Valor2',
     'RSUMA'             : 'Suma',
@@ -175,18 +175,18 @@ def operar():
             text = lista_lexemas.pop(0)
             return Texto(text, tipo, f'Inicio: {text.getFila()}', f'Fin: {text.getColumna()}')
 
-        if lexema.operar(None) == 'color-fondo-nodo':
-            tipo = 'color-fondo-nodo'
+        if lexema.operar(None) == 'fondo':
+            tipo = 'fondo'
             text = lista_lexemas.pop(0)
             return Texto(text, tipo, f'Inicio: {text.getFila()}', f'Fin: {text.getColumna()}')
 
-        if lexema.operar(None) == 'color-fuente-nodo':
-            tipo = 'color-fuente-nodo'
+        if lexema.operar(None) == 'fuente':
+            tipo = 'fuente'
             text = lista_lexemas.pop(0)
             return Texto(text, tipo, f'Inicio: {text.getFila()}', f'Fin: {text.getColumna()}')
 
-        if lexema.operar(None) == 'forma-nodo':
-            tipo = 'forma-nodo'
+        if lexema.operar(None) == 'forma':
+            tipo = 'forma'
             text = lista_lexemas.pop(0)
             return Texto(text, tipo, f'Inicio: {text.getFila()}', f'Fin: {text.getColumna()}')
 

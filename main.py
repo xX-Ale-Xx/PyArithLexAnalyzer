@@ -163,7 +163,7 @@ def Graphviz(respuestas_Operaciones):
                 print(respuesta.ejecutarT())
                 if respuesta.ejecutarT() == "texto":  # Podemos recibir cualquier texto
                     Titulo = str(respuesta.texto.operar(None))
-                if respuesta.ejecutarT() == "color-fondo-nodo":  # Vericar el color del nodo a asignar
+                if respuesta.ejecutarT() == "fondo":  # Vericar el color del nodo a asignar
                     if temporal == ("amarillo" or "yellow"):
                         temporal = "yellow"
                         colorNodo = temporal
@@ -180,7 +180,7 @@ def Graphviz(respuestas_Operaciones):
                         temporal = "purple"
                         colorNodo = temporal
                 print(colorNodo)
-                if respuesta.ejecutarT() == "color-fuente-nodo":  # Vericar la fuente del nodo a asignar
+                if respuesta.ejecutarT() == "fuente":  # Vericar la fuente del nodo a asignar
 
                     if temporal == ("amarillo" or "yellow"):
                         temporal = "yellow"
@@ -201,7 +201,7 @@ def Graphviz(respuestas_Operaciones):
                         temporal = "black"
                         fuenteNodo = temporal
 
-                if respuesta.ejecutarT() == "forma-nodo":  # Vericar el formato de nodo a asignar
+                if respuesta.ejecutarT() == "forma":  # Vericar el formato de nodo a asignar
                     if temporal == ("circulo" or "circle"):
                         temporal = "circle"
                         formaNodo = temporal
@@ -251,7 +251,7 @@ def Graphviz(respuestas_Operaciones):
 
                 text += f"\tnodoRespuesta{Crespuesta} -> nodoIzqu{CnumIzquierdo}\n"
                 if CnumDerecho:
-                  text += f"\tnodoRespuesta{Crespuesta} -> nodoDere{CnumDerecho}\n" 
+                  text += f"\tnodoRespuesta{Crespuesta} -> nodoDere{CnumDerecho}\n"
 
                 text += f"\tnodoT{Ctotal}" + f"[label = \"{respuesta.operar(None)}" + "\"]\n"
                 text += f"\tnodoT{Ctotal} -> nodoRespuesta{Crespuesta}\n"
