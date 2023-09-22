@@ -5,6 +5,8 @@ class Trigonometria(Expression):
     def __init__(self, dato, tipo, fila, columna):
         self.dato = dato
         self.tipo = tipo
+        self.left = None
+        self.right = None
         super().__init__(fila, columna)
 
     def operar(self, arbol):
@@ -15,7 +17,7 @@ class Trigonometria(Expression):
 
         if self.tipo.operar(arbol).capitalize() == 'Coseno':
 
-            return round(value,2)
+            return round(math.cos(value),2)
         elif self.tipo.operar(arbol).capitalize() == 'Seno':
 
             return round(math.sin(value),2)
@@ -34,4 +36,5 @@ class Trigonometria(Expression):
 
     def getColumna(self):
         return super().getColumna()
+
 

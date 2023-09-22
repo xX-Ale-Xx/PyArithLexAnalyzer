@@ -4,6 +4,7 @@ class Aritmetica(Expression):
     def __init__(self, left, right, tipo, fila, columna):
         self.left = left
         self.right = right
+        self.dato = None
         self.tipo = tipo
         super().__init__(fila, columna)
 

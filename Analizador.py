@@ -153,6 +153,7 @@ def operar():
     operacion = ''
     n1 = None
     n2 = None
+    anidado = False
 
     text = ''
 

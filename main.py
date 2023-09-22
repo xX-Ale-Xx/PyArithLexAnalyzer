@@ -3,6 +3,9 @@ import tkinter as tk
 import webbrowser
 from tkinter import filedialog, messagebox
 from tkinter.scrolledtext import ScrolledText
+
+import Aritmetica
+import Trigonometria
 from Analizador import intruccion, getErrores, operar_
 from GenerarJSON import generarJSON
 from PIL import Image
@@ -244,19 +247,9 @@ def Graphviz(respuestas_Operaciones):
             Ctotal += 1
 
             if isinstance(respuesta.operar(None), int) or isinstance(respuesta.operar(None), float) == True:
-
-                text += f"\tnodoRespuesta{Crespuesta}" + "[" + f"style = filled" + f",fillcolor = {colorNodo}" + f",fontcolor = {fuenteNodo}" + "]\n"
-                text += f"\tnodoIzqu{CnumIzquierdo}" + "[" + f"style = filled" + f",fillcolor = {colorNodo}" + f",fontcolor = {fuenteNodo}" + "]\n"
-                text += f"\tnodoDere{CnumDerecho}" + "[" + f"style = filled" + f",fillcolor = {colorNodo}" + f",fontcolor = {fuenteNodo}" + "]\n"
                 text += f"\tnodoT{Ctotal}" + "[" + f"style = filled" + f",fillcolor = {colorNodo}" + f",fontcolor = {fuenteNodo}" + "]\n"
 
-                text += f"\tnodoRespuesta{Crespuesta}" + f"[label = \"{str(respuesta.tipo.operar(None))}: " + "\"]\n"
-                text += f"\tnodoIzqu{CnumIzquierdo}" + "[label = \"Valor1: " + f" {str(respuesta.left.operar(None))} " + "\"]\n"
-                text += f"\tnodoDere{CnumDerecho}" + "[label = \"Valor2: " + f" {str(respuesta.right.operar(None))} " + "\"]\n"
-
-                text += f"\tnodoRespuesta{Crespuesta} -> nodoIzqu{CnumIzquierdo}\n"
-                if CnumDerecho:
-                  text += f"\tnodoRespuesta{Crespuesta} -> nodoDere{CnumDerecho}\n"
+                text += anidado(respuesta, Crespuesta, CnumIzquierdo, CnumDerecho, colorNodo, fuenteNodo, False, False)
 
                 text += f"\tnodoT{Ctotal}" + f"[label = \"{respuesta.operar(None)}" + "\"]\n"
                 text += f"\tnodoT{Ctotal} -> nodoRespuesta{Crespuesta}\n"
@@ -268,6 +261,86 @@ def Graphviz(respuestas_Operaciones):
     except Exception as e:
         messagebox.showinfo("Se produjo un error: ", str(e))
         messagebox.showinfo("Mensaje", "Error en los comandos de Graphviz")
+
+
+def anidado(resul, Crespuesta, CnumIzquierdo, CnumDerecho, colorNodo, fuenteNodo, derecho, izquierdo):
+    viene_de = derecho
+    viene_iz = izquierdo
+    text = ''
+
+
+    text += f"\tnodoRespuesta{Crespuesta}" + "[" + f"style = filled" + f",fillcolor = {colorNodo}" + f",fontcolor = {fuenteNodo}" + "]\n"
+    text += f"\tnodoIzqu{CnumIzquierdo}" + "[" + f"style = filled" + f",fillcolor = {colorNodo}" + f",fontcolor = {fuenteNodo}" + "]\n"
+    text += f"\tnodoDere{CnumDerecho}" + "[" + f"style = filled" + f",fillcolor = {colorNodo}" + f",fontcolor = {fuenteNodo}" + "]\n"
+
+    respuesta = resul
+    if isinstance(respuesta, Aritmetica.Aritmetica) and respuesta.right and respuesta.left:
+                    text += f"\tnodoRespuesta{Crespuesta}" + f"[label = \"{str(respuesta.tipo.operar(None))}: " + "\"]\n"
+                    text += f"\tnodoIzqu{CnumIzquierdo}" + "[label = \"Valor1: " + f" {str(respuesta.left.operar(None))} " + "\"]\n"
+                    text += f"\tnodoDere{CnumDerecho}" + "[label = \"Valor2: " + f" {str(respuesta.right.operar(None))} " + "\"]\n"
+
+                    text += f"\tnodoRespuesta{Crespuesta} -> nodoIzqu{CnumIzquierdo}\n"
+                    text += f"\tnodoRespuesta{Crespuesta} -> nodoDere{CnumDerecho}\n"
+                    ambos = False
+
+
+                    if isinstance(respuesta.left, Trigonometria.Trigonometria) or isinstance(respuesta.left, Aritmetica.Aritmetica) and respuesta.left:
+                        res = CnumIzquierdo
+                        respuesta = respuesta.left
+                        Crespuesta +=1
+                        CnumDerecho +=1
+                        CnumIzquierdo +=1
+
+                        text += anidado(respuesta, Crespuesta, CnumIzquierdo, CnumDerecho, colorNodo, fuenteNodo, True, False)
+                        text += f"\tnodoIzqu{res} -> nodoRespuesta{Crespuesta}\n"
+                        ambos = True
+
+                    if isinstance(respuesta.right , Trigonometria.Trigonometria) or isinstance(respuesta.right,Aritmetica.Aritmetica) and respuesta.right:
+                        respuesta = respuesta.right
+                        Crespuesta +=1
+                        derecho = CnumDerecho
+                        CnumDerecho +=1
+                        CnumIzquierdo +=1
+                        text += anidado(respuesta, Crespuesta, CnumIzquierdo, CnumDerecho, colorNodo, fuenteNodo, False, True)
+                        text += f"\tnodoDere{derecho} -> nodoRespuesta{Crespuesta}\n"
+                        ambos = True
+                    if ambos:
+                        return text
+
+
+    elif isinstance(respuesta, Trigonometria.Trigonometria) and respuesta.dato:
+                    text += f"\tnodoRespuesta{Crespuesta}" + f"[label = \"{str(respuesta.tipo.operar(None))}: " + "\"]\n"
+                    if viene_iz:
+                        text += f"\tnodoIzqu{CnumIzquierdo}" + "[label = \"Valor1: " + f" {str(respuesta.dato.operar(None))} " + "\"]\n"
+                        text += f"\tnodoRespuesta{Crespuesta} -> nodoIzqu{CnumIzquierdo}\n"
+                    if viene_de:
+                        text += f"\tnodoDere{CnumIzquierdo}" + "[label = \"Valor1: " + f" {str(respuesta.dato.operar(None))} " + "\"]\n"
+                        text += f"\tnodoRespuesta{Crespuesta} -> nodoDere{CnumIzquierdo}\n"
+
+                    if isinstance(respuesta.dato,Trigonometria.Trigonometria) or isinstance(respuesta.dato,Aritmetica.Aritmetica):
+                        respuesta = respuesta.dato
+                        res = CnumIzquierdo
+                        Crespuesta +=1
+                        CnumDerecho +=1
+                        CnumIzquierdo +=1
+
+                        text += anidado(respuesta, Crespuesta, CnumIzquierdo, CnumDerecho, colorNodo, fuenteNodo, False,False)
+                        if viene_iz:
+                            text += anidado(respuesta, Crespuesta, CnumIzquierdo, CnumDerecho, colorNodo, fuenteNodo,
+                                            False, True)
+                            text += f"\tnodoIzqu{res} -> nodoRespuesta{Crespuesta}\n"
+                        if viene_de:
+                            text += anidado(respuesta, Crespuesta, CnumIzquierdo, CnumDerecho, colorNodo, fuenteNodo,
+                                            True, False)
+                            text += f"\tnodoDere{res} -> nodoRespuesta{Crespuesta}\n"
+                        return text
+
+
+
+    return text
+
+
+
 
 
 if __name__ == "__main__":

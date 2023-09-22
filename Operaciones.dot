@@ -1,0 +1,25 @@
+digraph G {
+
+	node [shape=circle]
+	nodo0 [label = "Realizacion de Operaciones"]
+	nodo0[fontcolor = black]
+	nodoT1[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta1[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoIzqu1[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoDere1[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta1[label = "resta: "]
+	nodoIzqu1[label = "Valor1:  -0.98 "]
+	nodoDere1[label = "Valor2:  4.5 "]
+	nodoRespuesta1 -> nodoIzqu1
+	nodoRespuesta1 -> nodoDere1
+	nodoRespuesta2[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoIzqu2[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoDere2[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta2[label = "seno: "]
+	nodoDere2[label = "Valor1:  4.5 "]
+	nodoRespuesta2 -> nodoDere2
+	nodoIzqu1 -> nodoRespuesta2
+	nodoT1[label = "-5.48"]
+	nodoT1 -> nodoRespuesta1
+
+}
