@@ -50,7 +50,7 @@ class TextEditorApp:
         self.data = self.text_widget.get(1.0, tk.END)
 
     def irUrl(self):
-        webbrowser.open_new_tab('https://github.com/xX-Ale-Xx/LFP_S2_2023_Proyecto1_202200392')
+        webbrowser.open_new_tab('https://github.com/xX-Ale-Xx/LFP_S2_2023_Proyecto1_202200392/tree/master/Manuales')
 
 
 
