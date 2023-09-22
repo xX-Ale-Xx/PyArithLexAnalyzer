@@ -1,5 +1,6 @@
 import os
 import tkinter as tk
+import webbrowser
 from tkinter import filedialog, messagebox
 from tkinter.scrolledtext import ScrolledText
 from Analizador import intruccion, getErrores, operar_
@@ -34,6 +35,7 @@ class TextEditorApp:
         self.menu_bar.add_command(label="Analizar", command=self.analizar)
         self.menu_bar.add_command(label="Errores", command=self.Errores)
         self.menu_bar.add_command(label="Graficar", command=self.gh)
+        self.menu_bar.add_command(label="Ver manuales", command=self.irUrl)
 
     def open_file(self):
 
@@ -46,6 +48,9 @@ class TextEditorApp:
                 self.text_widget.insert(tk.END, content)
             self.update_line_numbers()
         self.data = self.text_widget.get(1.0, tk.END)
+
+    def irUrl(self):
+        webbrowser.open_new_tab('https://github.com/xX-Ale-Xx/LFP_S2_2023_Proyecto1_202200392')
 
 
 
