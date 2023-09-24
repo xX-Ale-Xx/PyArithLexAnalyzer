@@ -3,23 +3,363 @@ digraph G {
 	node [shape=circle]
 	nodo0 [label = "Realizacion de Operaciones"]
 	nodo0[fontcolor = black]
-	nodoT1[style = filled,fillcolor = yellow,fontcolor = black]
-	nodoRespuesta1[style = filled,fillcolor = yellow,fontcolor = black]
-	nodoIzqu1[style = filled,fillcolor = yellow,fontcolor = black]
-	nodoDere1[style = filled,fillcolor = yellow,fontcolor = black]
-	nodoRespuesta1[label = "resta: "]
-	nodoIzqu1[label = "Valor1:  -0.98 "]
-	nodoDere1[label = "Valor2:  4.5 "]
-	nodoRespuesta1 -> nodoIzqu1
-	nodoRespuesta1 -> nodoDere1
-	nodoRespuesta2[style = filled,fillcolor = yellow,fontcolor = black]
-	nodoIzqu2[style = filled,fillcolor = yellow,fontcolor = black]
-	nodoDere2[style = filled,fillcolor = yellow,fontcolor = black]
-	nodoRespuesta2[label = "seno: "]
-	nodoDere2[label = "Valor1:  4.5 "]
-	nodoRespuesta2 -> nodoDere2
-	nodoIzqu1 -> nodoRespuesta2
-	nodoT1[label = "-5.48"]
-	nodoT1 -> nodoRespuesta1
+	nodoT1Resta[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta1Resta[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoIzqu1Resta[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoDere1Resta[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta1Resta[label = "Resta: "]
+	nodoIzqu1Resta[label = "Valor1:  6.5 "]
+	nodoDere1Resta[label = "Valor2:  3.5 "]
+	nodoRespuesta1Resta -> nodoIzqu1Resta
+	nodoRespuesta1Resta -> nodoDere1Resta
+	nodoT1Resta[label = "3.0"]
+	nodoT1Resta -> nodoRespuesta1Resta
+	nodoT2Suma[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta2Suma[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoIzqu2Suma[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoDere2Suma[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta2Suma[label = "Suma: "]
+	nodoIzqu2Suma[label = "Valor1:  2.3 "]
+	nodoDere2Suma[label = "Valor2:  5.32 "]
+	nodoRespuesta2Suma -> nodoIzqu2Suma
+	nodoRespuesta2Suma -> nodoDere2Suma
+	nodoT2Suma[label = "7.62"]
+	nodoT2Suma -> nodoRespuesta2Suma
+	nodoT3Multiplicacion[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta3Multiplicacion[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoIzqu3Multiplicacion[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoDere3Multiplicacion[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta3Multiplicacion[label = "Multiplicacion: "]
+	nodoIzqu3Multiplicacion[label = "Valor1:  2.3 "]
+	nodoDere3Multiplicacion[label = "Valor2:  0.89 "]
+	nodoRespuesta3Multiplicacion -> nodoIzqu3Multiplicacion
+	nodoRespuesta3Multiplicacion -> nodoDere3Multiplicacion
+	nodoRespuesta4Multiplicacion[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoTrigono3Multiplicacion[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta4Multiplicacion[label = "Seno: "]
+	nodoTrigono3Multiplicacion[label = "Valor1:  90 "]
+	nodoRespuesta4Multiplicacion -> nodoTrigono3Multiplicacion
+	nodoDere3Multiplicacion -> nodoRespuesta4Multiplicacion
+	nodoT3Multiplicacion[label = "2.05"]
+	nodoT3Multiplicacion -> nodoRespuesta3Multiplicacion
+	nodoT4Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta4Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoIzqu4Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoDere4Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta4Division[label = "Division: "]
+	nodoIzqu4Division[label = "Valor1:  1 "]
+	nodoDere4Division[label = "Valor2:  5.32 "]
+	nodoRespuesta4Division -> nodoIzqu4Division
+	nodoRespuesta4Division -> nodoDere4Division
+	nodoRespuesta5Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoIzqu5Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoDere5Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta5Division[label = "Mod: "]
+	nodoIzqu5Division[label = "Valor1:  10 "]
+	nodoDere5Division[label = "Valor2:  3 "]
+	nodoRespuesta5Division -> nodoIzqu5Division
+	nodoRespuesta5Division -> nodoDere5Division
+	nodoIzqu4Division -> nodoRespuesta5Division
+	nodoT4Division[label = "0.19"]
+	nodoT4Division -> nodoRespuesta4Division
+	nodoT5Resta[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta5Resta[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoIzqu5Resta[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoDere5Resta[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta5Resta[label = "Resta: "]
+	nodoIzqu5Resta[label = "Valor1:  7.8 "]
+	nodoDere5Resta[label = "Valor2:  1.2 "]
+	nodoRespuesta5Resta -> nodoIzqu5Resta
+	nodoRespuesta5Resta -> nodoDere5Resta
+	nodoT5Resta[label = "6.6"]
+	nodoT5Resta -> nodoRespuesta5Resta
+	nodoT6Suma[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta6Suma[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoIzqu6Suma[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoDere6Suma[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta6Suma[label = "Suma: "]
+	nodoIzqu6Suma[label = "Valor1:  4.5 "]
+	nodoDere6Suma[label = "Valor2:  6.7 "]
+	nodoRespuesta6Suma -> nodoIzqu6Suma
+	nodoRespuesta6Suma -> nodoDere6Suma
+	nodoT6Suma[label = "11.2"]
+	nodoT6Suma -> nodoRespuesta6Suma
+	nodoT7Multiplicacion[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta7Multiplicacion[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoIzqu7Multiplicacion[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoDere7Multiplicacion[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta7Multiplicacion[label = "Multiplicacion: "]
+	nodoIzqu7Multiplicacion[label = "Valor1:  3.14 "]
+	nodoDere7Multiplicacion[label = "Valor2:  0.53 "]
+	nodoRespuesta7Multiplicacion -> nodoIzqu7Multiplicacion
+	nodoRespuesta7Multiplicacion -> nodoDere7Multiplicacion
+	nodoRespuesta8Multiplicacion[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoTrigono7Multiplicacion[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta8Multiplicacion[label = "Coseno: "]
+	nodoTrigono7Multiplicacion[label = "Valor1:  45 "]
+	nodoRespuesta8Multiplicacion -> nodoTrigono7Multiplicacion
+	nodoDere7Multiplicacion -> nodoRespuesta8Multiplicacion
+	nodoT7Multiplicacion[label = "1.66"]
+	nodoT7Multiplicacion -> nodoRespuesta7Multiplicacion
+	nodoT8Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta8Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoIzqu8Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoDere8Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta8Division[label = "Division: "]
+	nodoIzqu8Division[label = "Valor1:  0.12 "]
+	nodoDere8Division[label = "Valor2:  2.71 "]
+	nodoRespuesta8Division -> nodoIzqu8Division
+	nodoRespuesta8Division -> nodoDere8Division
+	nodoRespuesta9Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoTrigono8Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta9Division[label = "Inverso: "]
+	nodoTrigono8Division[label = "Valor1:  8 "]
+	nodoRespuesta9Division -> nodoTrigono8Division
+	nodoIzqu8Division -> nodoRespuesta9Division
+	nodoT8Division[label = "0.04"]
+	nodoT8Division -> nodoRespuesta8Division
+	nodoT9Resta[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta9Resta[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoIzqu9Resta[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoDere9Resta[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta9Resta[label = "Resta: "]
+	nodoIzqu9Resta[label = "Valor1:  9.6 "]
+	nodoDere9Resta[label = "Valor2:  4.8 "]
+	nodoRespuesta9Resta -> nodoIzqu9Resta
+	nodoRespuesta9Resta -> nodoDere9Resta
+	nodoT9Resta[label = "4.8"]
+	nodoT9Resta -> nodoRespuesta9Resta
+	nodoT10Suma[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta10Suma[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoIzqu10Suma[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoDere10Suma[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta10Suma[label = "Suma: "]
+	nodoIzqu10Suma[label = "Valor1:  1.11 "]
+	nodoDere10Suma[label = "Valor2:  7.89 "]
+	nodoRespuesta10Suma -> nodoIzqu10Suma
+	nodoRespuesta10Suma -> nodoDere10Suma
+	nodoT10Suma[label = "9.0"]
+	nodoT10Suma -> nodoRespuesta10Suma
+	nodoT11Multiplicacion[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta11Multiplicacion[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoIzqu11Multiplicacion[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoDere11Multiplicacion[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta11Multiplicacion[label = "Multiplicacion: "]
+	nodoIzqu11Multiplicacion[label = "Valor1:  6.66 "]
+	nodoDere11Multiplicacion[label = "Valor2:  -6.41 "]
+	nodoRespuesta11Multiplicacion -> nodoIzqu11Multiplicacion
+	nodoRespuesta11Multiplicacion -> nodoDere11Multiplicacion
+	nodoRespuesta12Multiplicacion[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoTrigono11Multiplicacion[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta12Multiplicacion[label = "Tangente: "]
+	nodoTrigono11Multiplicacion[label = "Valor1:  30 "]
+	nodoRespuesta12Multiplicacion -> nodoTrigono11Multiplicacion
+	nodoDere11Multiplicacion -> nodoRespuesta12Multiplicacion
+	nodoT11Multiplicacion[label = "-42.69"]
+	nodoT11Multiplicacion -> nodoRespuesta11Multiplicacion
+	nodoT12Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta12Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoIzqu12Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoDere12Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta12Division[label = "Division: "]
+	nodoIzqu12Division[label = "Valor1:  0.08 "]
+	nodoDere12Division[label = "Valor2:  3.33 "]
+	nodoRespuesta12Division -> nodoIzqu12Division
+	nodoRespuesta12Division -> nodoDere12Division
+	nodoRespuesta13Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoTrigono12Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta13Division[label = "Inverso: "]
+	nodoTrigono12Division[label = "Valor1:  12 "]
+	nodoRespuesta13Division -> nodoTrigono12Division
+	nodoIzqu12Division -> nodoRespuesta13Division
+	nodoT12Division[label = "0.02"]
+	nodoT12Division -> nodoRespuesta12Division
+	nodoT13Resta[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta13Resta[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoIzqu13Resta[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoDere13Resta[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta13Resta[label = "Resta: "]
+	nodoIzqu13Resta[label = "Valor1:  10.5 "]
+	nodoDere13Resta[label = "Valor2:  5.5 "]
+	nodoRespuesta13Resta -> nodoIzqu13Resta
+	nodoRespuesta13Resta -> nodoDere13Resta
+	nodoT13Resta[label = "5.0"]
+	nodoT13Resta -> nodoRespuesta13Resta
+	nodoT14Suma[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta14Suma[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoIzqu14Suma[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoDere14Suma[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta14Suma[label = "Suma: "]
+	nodoIzqu14Suma[label = "Valor1:  2.22 "]
+	nodoDere14Suma[label = "Valor2:  8.88 "]
+	nodoRespuesta14Suma -> nodoIzqu14Suma
+	nodoRespuesta14Suma -> nodoDere14Suma
+	nodoT14Suma[label = "11.1"]
+	nodoT14Suma -> nodoRespuesta14Suma
+	nodoT15Multiplicacion[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta15Multiplicacion[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoIzqu15Multiplicacion[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoDere15Multiplicacion[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta15Multiplicacion[label = "Multiplicacion: "]
+	nodoIzqu15Multiplicacion[label = "Valor1:  5.55 "]
+	nodoDere15Multiplicacion[label = "Valor2:  -0.3 "]
+	nodoRespuesta15Multiplicacion -> nodoIzqu15Multiplicacion
+	nodoRespuesta15Multiplicacion -> nodoDere15Multiplicacion
+	nodoRespuesta16Multiplicacion[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoTrigono15Multiplicacion[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta16Multiplicacion[label = "Seno: "]
+	nodoTrigono15Multiplicacion[label = "Valor1:  60 "]
+	nodoRespuesta16Multiplicacion -> nodoTrigono15Multiplicacion
+	nodoDere15Multiplicacion -> nodoRespuesta16Multiplicacion
+	nodoT15Multiplicacion[label = "-1.66"]
+	nodoT15Multiplicacion -> nodoRespuesta15Multiplicacion
+	nodoT16Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta16Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoIzqu16Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoDere16Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta16Division[label = "Division: "]
+	nodoIzqu16Division[label = "Valor1:  -0.45 "]
+	nodoDere16Division[label = "Valor2:  4.44 "]
+	nodoRespuesta16Division -> nodoIzqu16Division
+	nodoRespuesta16Division -> nodoDere16Division
+	nodoRespuesta17Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoTrigono16Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta17Division[label = "Coseno: "]
+	nodoTrigono16Division[label = "Valor1:  90 "]
+	nodoRespuesta17Division -> nodoTrigono16Division
+	nodoIzqu16Division -> nodoRespuesta17Division
+	nodoT16Division[label = "-0.1"]
+	nodoT16Division -> nodoRespuesta16Division
+	nodoT17Resta[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta17Resta[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoIzqu17Resta[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoDere17Resta[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta17Resta[label = "Resta: "]
+	nodoIzqu17Resta[label = "Valor1:  8.7 "]
+	nodoDere17Resta[label = "Valor2:  2.3 "]
+	nodoRespuesta17Resta -> nodoIzqu17Resta
+	nodoRespuesta17Resta -> nodoDere17Resta
+	nodoT17Resta[label = "6.4"]
+	nodoT17Resta -> nodoRespuesta17Resta
+	nodoT18Suma[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta18Suma[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoIzqu18Suma[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoDere18Suma[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta18Suma[label = "Suma: "]
+	nodoIzqu18Suma[label = "Valor1:  3.33 "]
+	nodoDere18Suma[label = "Valor2:  9.99 "]
+	nodoRespuesta18Suma -> nodoIzqu18Suma
+	nodoRespuesta18Suma -> nodoDere18Suma
+	nodoT18Suma[label = "13.32"]
+	nodoT18Suma -> nodoRespuesta18Suma
+	nodoT19Multiplicacion[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta19Multiplicacion[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoIzqu19Multiplicacion[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoDere19Multiplicacion[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta19Multiplicacion[label = "Multiplicacion: "]
+	nodoIzqu19Multiplicacion[label = "Valor1:  7.77 "]
+	nodoDere19Multiplicacion[label = "Valor2:  -0.39 "]
+	nodoRespuesta19Multiplicacion -> nodoIzqu19Multiplicacion
+	nodoRespuesta19Multiplicacion -> nodoDere19Multiplicacion
+	nodoRespuesta20Multiplicacion[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoTrigono19Multiplicacion[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta20Multiplicacion[label = "Seno: "]
+	nodoTrigono19Multiplicacion[label = "Valor1:  75 "]
+	nodoRespuesta20Multiplicacion -> nodoTrigono19Multiplicacion
+	nodoDere19Multiplicacion -> nodoRespuesta20Multiplicacion
+	nodoT19Multiplicacion[label = "-3.03"]
+	nodoT19Multiplicacion -> nodoRespuesta19Multiplicacion
+	nodoT20Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta20Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoIzqu20Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoDere20Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta20Division[label = "Division: "]
+	nodoIzqu20Division[label = "Valor1:  5.0 "]
+	nodoDere20Division[label = "Valor2:  2 "]
+	nodoRespuesta20Division -> nodoIzqu20Division
+	nodoRespuesta20Division -> nodoDere20Division
+	nodoRespuesta21Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoTrigono20Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta21Division[label = "Raiz: "]
+	nodoTrigono20Division[label = "Valor1:  25 "]
+	nodoRespuesta21Division -> nodoTrigono20Division
+	nodoIzqu20Division -> nodoRespuesta21Division
+	nodoT20Division[label = "2.5"]
+	nodoT20Division -> nodoRespuesta20Division
+	nodoT21Resta[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta21Resta[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoIzqu21Resta[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoDere21Resta[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta21Resta[label = "Resta: "]
+	nodoIzqu21Resta[label = "Valor1:  5.6 "]
+	nodoDere21Resta[label = "Valor2:  6.66 "]
+	nodoRespuesta21Resta -> nodoIzqu21Resta
+	nodoRespuesta21Resta -> nodoDere21Resta
+	nodoT21Resta[label = "-1.06"]
+	nodoT21Resta -> nodoRespuesta21Resta
+	nodoT22Suma[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta22Suma[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoIzqu22Suma[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoDere22Suma[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta22Suma[label = "Suma: "]
+	nodoIzqu22Suma[label = "Valor1:  4.44 "]
+	nodoDere22Suma[label = "Valor2:  0.9 "]
+	nodoRespuesta22Suma -> nodoIzqu22Suma
+	nodoRespuesta22Suma -> nodoDere22Suma
+	nodoT22Suma[label = "5.34"]
+	nodoT22Suma -> nodoRespuesta22Suma
+	nodoT23Multiplicacion[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta23Multiplicacion[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoIzqu23Multiplicacion[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoDere23Multiplicacion[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta23Multiplicacion[label = "Multiplicacion: "]
+	nodoIzqu23Multiplicacion[label = "Valor1:  8.88 "]
+	nodoDere23Multiplicacion[label = "Valor2:  7.77 "]
+	nodoRespuesta23Multiplicacion -> nodoIzqu23Multiplicacion
+	nodoRespuesta23Multiplicacion -> nodoDere23Multiplicacion
+	nodoT23Multiplicacion[label = "69.0"]
+	nodoT23Multiplicacion -> nodoRespuesta23Multiplicacion
+	nodoT24Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta24Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoIzqu24Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoDere24Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta24Division[label = "Division: "]
+	nodoIzqu24Division[label = "Valor1:  7.24 "]
+	nodoDere24Division[label = "Valor2:  100 "]
+	nodoRespuesta24Division -> nodoIzqu24Division
+	nodoRespuesta24Division -> nodoDere24Division
+	nodoRespuesta25Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoIzqu25Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoDere25Division[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta25Division[label = "Mod: "]
+	nodoIzqu25Division[label = "Valor1:  25 "]
+	nodoDere25Division[label = "Valor2:  8.88 "]
+	nodoRespuesta25Division -> nodoIzqu25Division
+	nodoRespuesta25Division -> nodoDere25Division
+	nodoIzqu24Division -> nodoRespuesta25Division
+	nodoT24Division[label = "0.07"]
+	nodoT24Division -> nodoRespuesta24Division
+	nodoT25Resta[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta25Resta[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoIzqu25Resta[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoDere25Resta[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta25Resta[label = "Resta: "]
+	nodoIzqu25Resta[label = "Valor1:  3.4 "]
+	nodoDere25Resta[label = "Valor2:  2.1 "]
+	nodoRespuesta25Resta -> nodoIzqu25Resta
+	nodoRespuesta25Resta -> nodoDere25Resta
+	nodoT25Resta[label = "1.3"]
+	nodoT25Resta -> nodoRespuesta25Resta
+	nodoT26Suma[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta26Suma[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoIzqu26Suma[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoDere26Suma[style = filled,fillcolor = yellow,fontcolor = black]
+	nodoRespuesta26Suma[label = "Suma: "]
+	nodoIzqu26Suma[label = "Valor1:  5.55 "]
+	nodoDere26Suma[label = "Valor2:  6.66 "]
+	nodoRespuesta26Suma -> nodoIzqu26Suma
+	nodoRespuesta26Suma -> nodoDere26Suma
+	nodoT26Suma[label = "12.21"]
+	nodoT26Suma -> nodoRespuesta26Suma
 
 }
