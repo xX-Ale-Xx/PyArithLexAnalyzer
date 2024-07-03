@@ -9,7 +9,7 @@
 <h3>Análisis Léxico</h3>
 <ul>
   <li>Identificación y clasificación de tokens en archivos JSON.</li>
-  <li>Manejo de diferentes tipos de datos (números, texto, booleanos).</li>
+  <li>Manejo de números enteros y decimales.</li>
   <li>Verificación de la estructura y formato de los archivos JSON.</li>
 </ul>
 
@@ -24,6 +24,6 @@
 <ul>
   <li><strong>Lenguaje de Programación:</strong> Python</li>
   <li><strong>Bibliotecas:</strong> json, re (para análisis léxico y manejo de JSON)</li>
-  <li><strong>Entorno de Desarrollo:</strong> PyCharm/VSCode</li>
+  <li><strong>Entorno de Desarrollo:</strong> PyCharm </li>
   <li><strong>Control de Versiones:</strong> Git</li>
 </ul>
